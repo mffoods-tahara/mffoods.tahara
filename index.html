@@ -343,6 +343,13 @@ body { font-family: sans-serif; background: #fafaf8; color: #1a1a1a; }
 .form-submit:hover { background: #7F77DD; }
 .contact-hours { margin-top: 20px; text-align: center; font-size: 12px; color: #7F77DD; line-height: 1.9; }
 .contact-hours strong { color: #b8b2f5; display: block; margin-bottom: 2px; }
+.contact-thanks { display:none; background:#fff; border-radius:16px; padding:48px 24px; text-align:center; }
+.contact-thanks.show { display:block; }
+.contact-thanks-icon { width:64px; height:64px; background:#EEEDFE; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; margin-bottom:20px; font-size:28px; color:#534AB7; line-height:1; }
+.contact-thanks-title { font-size:20px; font-weight:500; color:#2a2340; margin-bottom:16px; line-height:1.6; }
+.contact-thanks-msg { font-size:14px; color:#555; line-height:2; margin-bottom:24px; }
+.contact-thanks-back { display:inline-block; background:#7F77DD; color:#fff; font-size:13px; font-weight:500; padding:11px 28px; border-radius:40px; text-decoration:none; border:none; cursor:pointer; }
+.form-submit:disabled { opacity:0.6; cursor:not-allowed; }
 
 /* ═══════════════════════════════
    工房バナー・共通
@@ -607,19 +614,28 @@ body { font-family: sans-serif; background: #fafaf8; color: #1a1a1a; }
     <div class="contact-email-addr">info@mffoods.jp</div>
     <a href="mailto:info@mffoods.jp" class="contact-email-btn">メールで問い合わせる →</a>
   </div>
-  <div class="contact-form-wrap">
+  <form id="contactForm" class="contact-form-wrap">
+    <input type="hidden" name="_subject" value="【MF FOODS】新しいお問い合わせがありました">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
     <div class="form-title">お問い合わせフォーム</div>
-    <div class="form-group"><label class="form-label">会社名・店舗名<span>必須</span></label><input class="form-input" type="text" placeholder="例：〇〇カフェ"></div>
-    <div class="form-group"><label class="form-label">お名前<span>必須</span></label><input class="form-input" type="text" placeholder="例：山田 太郎"></div>
-    <div class="form-group"><label class="form-label">メールアドレス<span>必須</span></label><input class="form-input" type="email" placeholder="例：info@example.com"></div>
-    <div class="form-group"><label class="form-label">電話番号<span class="any">任意</span></label><input class="form-input" type="tel" placeholder="例：090-0000-0000"></div>
-    <div class="form-group"><label class="form-label">ご依頼の種類<span>必須</span></label><select class="form-select"><option value="" disabled selected>選択してください</option><option>OEM製造のご依頼（通常）</option>
+    <div class="form-group"><label class="form-label">会社名・店舗名<span>必須</span></label><input class="form-input" type="text" name="会社名・店舗名" placeholder="例：〇〇カフェ" required></div>
+    <div class="form-group"><label class="form-label">お名前<span>必須</span></label><input class="form-input" type="text" name="お名前" placeholder="例：山田 太郎" required></div>
+    <div class="form-group"><label class="form-label">メールアドレス<span>必須</span></label><input class="form-input" type="email" name="メールアドレス" placeholder="例：info@example.com" required></div>
+    <div class="form-group"><label class="form-label">電話番号<span class="any">任意</span></label><input class="form-input" type="tel" name="電話番号" placeholder="例：090-0000-0000"></div>
+    <div class="form-group"><label class="form-label">ご依頼の種類<span>必須</span></label><select class="form-select" name="ご依頼の種類" required><option value="" disabled selected>選択してください</option><option>OEM製造のご依頼（通常）</option>
         <option>OEM製造のご依頼（シェフ監修）</option><option>レシピ開発のご相談</option><option>サンプル・試作のご依頼</option><option>お見積もりのご依頼</option><option>その他</option></select></div>
-    <div class="form-group"><label class="form-label">ご依頼の頻度<span>必須</span></label><div class="radio-group"><label class="radio-label"><input type="radio" name="frequency" value="spot"> スポット（単発）</label><label class="radio-label"><input type="radio" name="frequency" value="regular"> 通年・定期</label><label class="radio-label"><input type="radio" name="frequency" value="undecided"> まだ未定</label></div></div>
-    <div class="form-group"><label class="form-label">ご希望の商品・内容<span class="any">任意</span></label><input class="form-input" type="text" placeholder="例：抹茶ロールケーキ"></div>
-    <div class="form-group"><label class="form-label">想定数量<span class="any">任意</span></label><select class="form-select"><option value="" disabled selected>おおよその数量を選択</option><option>〜100個</option><option>100〜500個</option><option>500〜1,000個</option><option>1,000〜5,000個</option><option>5,000個以上</option><option>まだ未定</option></select><div class="form-note">※目安で構いません。正確な数量は後からご相談いただけます。</div></div>
-    <div class="form-group"><label class="form-label">お問い合わせ内容<span>必須</span></label><textarea class="form-textarea" placeholder="ご要望・ご質問をご自由にお書きください。まだ内容が固まっていなくても大丈夫です。"></textarea><div class="form-note">※どんな段階のご相談でも歓迎します。お気軽にどうぞ。</div></div>
-    <button class="form-submit">送信する →</button>
+    <div class="form-group"><label class="form-label">ご依頼の頻度<span>必須</span></label><div class="radio-group"><label class="radio-label"><input type="radio" name="ご依頼の頻度" value="スポット（単発）" required> スポット（単発）</label><label class="radio-label"><input type="radio" name="ご依頼の頻度" value="通年・定期"> 通年・定期</label><label class="radio-label"><input type="radio" name="ご依頼の頻度" value="まだ未定"> まだ未定</label></div></div>
+    <div class="form-group"><label class="form-label">ご希望の商品・内容<span class="any">任意</span></label><input class="form-input" type="text" name="ご希望の商品・内容" placeholder="例：抹茶ロールケーキ"></div>
+    <div class="form-group"><label class="form-label">想定数量<span class="any">任意</span></label><select class="form-select" name="想定数量"><option value="" disabled selected>おおよその数量を選択</option><option>〜100個</option><option>100〜500個</option><option>500〜1,000個</option><option>1,000〜5,000個</option><option>5,000個以上</option><option>まだ未定</option></select><div class="form-note">※目安で構いません。正確な数量は後からご相談いただけます。</div></div>
+    <div class="form-group"><label class="form-label">お問い合わせ内容<span>必須</span></label><textarea class="form-textarea" name="お問い合わせ内容" placeholder="ご要望・ご質問をご自由にお書きください。まだ内容が固まっていなくても大丈夫です。" required></textarea><div class="form-note">※どんな段階のご相談でも歓迎します。お気軽にどうぞ。</div></div>
+    <button type="submit" class="form-submit">送信する →</button>
+  </form>
+  <div id="contactThanks" class="contact-thanks">
+    <div class="contact-thanks-icon">&#10003;</div>
+    <div class="contact-thanks-title">お問い合わせありがとうございます</div>
+    <p class="contact-thanks-msg">内容を確認のうえ、担当者（藤井）より<br>追ってご連絡させていただきます。<br><br>通常、1〜2営業日以内にご返信いたします。<br>しばらくお待ちくださいませ。</p>
+    <button class="contact-thanks-back" onclick="resetForm()">フォームに戻る</button>
   </div>
   <div class="contact-hours">
     <strong>担当：藤井一樹</strong>
@@ -710,6 +726,49 @@ document.querySelectorAll('.faq-q').forEach(q => {
     q.parentElement.classList.toggle('open');
   });
 });
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var form = this;
+  var btn = form.querySelector('.form-submit');
+  btn.disabled = true;
+  btn.textContent = '送信中...';
+  var formData = new FormData(form);
+  var data = {};
+  formData.forEach(function(value, key) { data[key] = value; });
+  fetch('https://formsubmit.co/ajax/mffoods.tahara@gmail.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  .then(function(response) { return response.json(); })
+  .then(function(result) {
+    if (result.success) {
+      form.style.display = 'none';
+      document.getElementById('contactThanks').classList.add('show');
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    } else {
+      alert('送信に失敗しました。お手数ですが info@mffoods.jp まで直接ご連絡ください。');
+      btn.disabled = false;
+      btn.textContent = '送信する →';
+    }
+  })
+  .catch(function() {
+    alert('送信に失敗しました。お手数ですが info@mffoods.jp まで直接ご連絡ください。');
+    btn.disabled = false;
+    btn.textContent = '送信する →';
+  });
+});
+
+function resetForm() {
+  var form = document.getElementById('contactForm');
+  form.reset();
+  form.style.display = '';
+  var btn = form.querySelector('.form-submit');
+  btn.disabled = false;
+  btn.textContent = '送信する →';
+  document.getElementById('contactThanks').classList.remove('show');
+}
 </script>
 
 </body>
