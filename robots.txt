@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow:
+
+Sitemap: https://mffoods.jp/sitemap.xml
+
+Host: https://mffoods.jp
