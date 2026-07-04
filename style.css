@@ -222,6 +222,7 @@ body { font-family: sans-serif; background: #fafaf8; color: #1a1a1a; }
 .footer-logo-wrap { background: rgba(255,255,255,0.9); border-radius: 10px; padding: 7px 16px; display: inline-block; margin-bottom: 16px; }
 .footer-logo { height: 40px; width: auto; display: block; }
 .footer p { font-size: 11px; color: #6b6388; line-height: 1.8; }
+.footer-links a { color: #a89ee0; text-decoration: underline; }
 
 /* ═══════════════════════════════
    ブログ一覧
