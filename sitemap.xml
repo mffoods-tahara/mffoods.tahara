@@ -3,31 +3,31 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://mffoods.jp/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://mffoods.jp/images/fv-hero.jpg</image:loc>
+      <image:loc>https://mffoods.jp/images/fv-hero.webp</image:loc>
       <image:title>スイーツOEM・小ロット受託製造のMF FOODS</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://mffoods.jp/images/item-rollcake.jpg</image:loc>
+      <image:loc>https://mffoods.jp/images/item-rollcake.webp</image:loc>
       <image:title>ロールケーキのOEM・受託製造</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://mffoods.jp/images/item-basque-cheese.jpg</image:loc>
+      <image:loc>https://mffoods.jp/images/item-basque-cheese.webp</image:loc>
       <image:title>バスクチーズケーキのOEM・受託製造</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://mffoods.jp/images/item-nama-donut.jpg</image:loc>
+      <image:loc>https://mffoods.jp/images/item-nama-donut.webp</image:loc>
       <image:title>生ドーナツのOEM・受託製造</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://mffoods.jp/images/item-baked-sweets.jpg</image:loc>
+      <image:loc>https://mffoods.jp/images/item-baked-sweets.webp</image:loc>
       <image:title>焼き菓子のOEM・受託製造</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://mffoods.jp/images/item-kohakuto.jpg</image:loc>
+      <image:loc>https://mffoods.jp/images/item-kohakuto.webp</image:loc>
       <image:title>琥珀糖のOEM・受託製造</image:title>
     </image:image>
     <image:image>
