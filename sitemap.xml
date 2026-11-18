@@ -37,9 +37,15 @@
   </url>
   <url>
     <loc>https://mffoods.jp/blog/</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mffoods.jp/blog/choosing-oem-partner.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://mffoods.jp/blog/recipe-development-guide.html</loc>
